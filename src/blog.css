@@ -1,0 +1,26 @@
+/* blog */
+.blog-image{
+    height: 120px;
+    width: auto;
+    border-radius: 75px;
+    margin: 1rem;
+    border: 5px solid #ffeb3b;
+}
+.blog-title{
+    font-size: 1.2em;
+    font-weight: 800;
+    text-align:left;
+}
+.blog-text{
+    font-size: .9em;
+}
+.blog-user{
+    font-size: 1em;
+    color: #c3465c;
+    font-weight: bolder;
+}
+.blog-date{
+    font-size: 1em;
+    color: #c8b900;
+    font-weight: bolder;
+}
