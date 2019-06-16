@@ -3,10 +3,21 @@ import './animal.css';
 
 
 class Animal extends React.Component {
+    constructor(props) {
+        super(props);
+        this.animals = [ 
+          {id: 1, type: 'Dog', picture: 'src="assets/p1.jpeg"', name: 'Jata', sex: 'Hembra', birthDate: '03/07/2015', zone: 'Reducto',  breed:'Sabueso', eyes: 'Marrón', pelt:'Beige', description:'Es muy bueno', favorite:'false'},
+          {id: 2, type: 'Cat', picture: 'src="assets/g1.jpg"', name: 'Felix', sex: 'Macho', birthDate: '11/01/2017', zone: 'Colon',  breed:'Bombay', eyes: 'Marrón', pelt:'Negro', description:'Es muy Lindo', favorite:'false'},
+          {id: 3, type: 'Dog', picture: 'src="assets/p2.jpg"', name: 'Chispas', sex: 'Macho', birthDate: '17/01/2019', zone: 'La Blanqueada',  breed:'Labrador', eyes: 'Marrón', pelt:'Beige', description:'Es muy tierno', favorite:'false'}
+        ]
+        this.state = { 
+        };
+    }
     render() {
         return (
             <section id="listado-animales">
-                <div class="container">
+                  <div class="container">
+                    <p>{this.animnals.map(animal=><Animal animal={animal} key={animal.id}/>)}</p>
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                             <a class="card-link" href="animal.html">

@@ -8,11 +8,10 @@ import Favorites from './Favorites';
 import Blog from './Blog.js';
 
 class App extends React.Component {
-
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      section: 1
+      section: 1,
     };
   }
 
@@ -38,7 +37,7 @@ class App extends React.Component {
       section: 4
     });
   }
-  
+
   currentSection() {
     if (this.state.section === 1) {
       return <ListAnimal />;
@@ -58,12 +57,11 @@ class App extends React.Component {
   }
 
   render() {
-    return (
 
+    return (
       <div className="App">
         <Header />
-          <FormBuscar/>
-
+        <FormBuscar />
         {this.currentSection()}
         <Footer />
       </div>
