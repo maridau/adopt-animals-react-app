@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header.js';
 import Footer from './Footer.js';
-import FormBuscar from './FormBuscar.js';
 import ListAnimal from './ListAnimal.js';
 import Register from './Register.js';
 import Favorites from './Favorites';
@@ -59,12 +58,11 @@ class App extends React.Component {
   render() {
 
     return (
-      <div className="App">
+      <main>
         <Header />
-        <FormBuscar />
         {this.currentSection()}
         <Footer />
-      </div>
+      </main>
     );
   }
 }

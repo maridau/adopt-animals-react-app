@@ -1,10 +1,10 @@
 {
     "baseAnimals" : [ 
-    {"id": 1, "type": "Dog", "picture": "assets/p1.jpeg", "name": "Jacinta", "sex": "Hembra", "birthDate": "03/07/2015", "zone": "Reducto",  "breed":"Sabueso", "eyes": "Marrón", "pelt":"Beige", "description":"Es muy bueno", "favorite":"true"},
-    {"id": 2, "type": "Cat", "picture": "assets/g1.jpg", "name": "Felix", "sex": "Macho", "birthDate": "03/07/2015", "zone": "Colón",  "breed":"Bombay", "eyes": "Negro", "pelt":"Negro", "description":"Es muy lindo", "favorite":"false"},
-    {"id": 3, "type": "Dog", "picture": "assets/p2.jpg", "name": "Chispas", "sex": "Macho", "birthDate": "17/01/2019", "zone": "La Blanqueada",  "breed":"Labrador", "eyes": "Marrón", "pelt":"Beige", "description":"Es muy tierno", "favorite":"false"},
-    {"id": 4, "type": "Cat", "picture": "assets/g2.jpg", "name": "Goldie", "sex": "Hembra", "birthDate": "08/09/2015", "zone": "Malvin",  "breed":"Persa amarillo", "eyes": "Marron", "pelt":"Beigge", "description":"Amigable", "favorite":"true"},
-    {"id": 5, "type": "Dog", "picture": "assets/p3.jpg", "name": "Bandido", "sex": "Macho", "birthDate": "15/11/2014", "zone": "Palermo",  "breed":"Pastor alemán", "eyes": "Negro", "pelt":"Negro", "description":"Es muy lindo", "favorite":"false"},
-    {"id": 6, "type": "Dog", "picture": "assets/p4.jpg", "name": "Chispas", "sex": "Macho", "birthDate": "17/05/2019", "zone": "Sayago",  "breed":"Labrador negro", "eyes": "Negro", "pelt":"Negro", "description":"Es muy tierno", "favorite":"true"}
+    {"id": 1, "type": "Dog", "icon": "assets/icons/ico-dog.png", "picture": "assets/p1.jpeg", "name": "Jacinta", "sex": "Hembra", "birthDate": "03/07/2015", "zone": "Reducto",  "breed":"Sabueso", "eyes": "Marrón", "pelt":"Beige", "description":"Es muy bueno", "favorite":"false"},
+    {"id": 2, "type": "Cat", "icon": "assets/icons/ico-cat.png", "picture": "assets/g1.jpg", "name": "Felix", "sex": "Macho", "birthDate": "03/07/2015", "zone": "Colón",  "breed":"Bombay", "eyes": "Negro", "pelt":"Negro", "description":"Es muy lindo", "favorite":"true"},
+    {"id": 3, "type": "Dog", "icon": "assets/icons/ico-dog.png", "picture": "assets/p2.jpg", "name": "Chispas", "sex": "Macho", "birthDate": "17/01/2019", "zone": "La Blanqueada",  "breed":"Labrador", "eyes": "Marrón", "pelt":"Beige", "description":"Es muy tierno", "favorite":"true"},
+    {"id": 4, "type": "Cat", "icon": "assets/icons/ico-cat.png", "picture": "assets/g2.jpg", "name": "Goldie", "sex": "Hembra", "birthDate": "08/09/2015", "zone": "Malvin",  "breed":"Persa amarillo", "eyes": "Marron", "pelt":"Beigge", "description":"Amigable", "favorite":"false"},
+    {"id": 5, "type": "Dog", "icon": "assets/icons/ico-dog.png", "picture": "assets/p3.jpg", "name": "Bandido", "sex": "Macho", "birthDate": "15/11/2014", "zone": "Palermo",  "breed":"Pastor alemán", "eyes": "Negro", "pelt":"Negro", "description":"Es muy lindo", "favorite":"true"},
+    {"id": 6, "type": "Dog", "icon": "assets/icons/ico-dog.png", "picture": "assets/p4.jpg", "name": "Chispas", "sex": "Macho", "birthDate": "17/05/2019", "zone": "Sayago",  "breed":"Labrador negro", "eyes": "Negro", "pelt":"Negro", "description":"Es muy tierno", "favorite":"false"}
 ]
 }

@@ -6,9 +6,7 @@ class FormBuscar extends React.Component {
     render() {
         return (
 
-            <section>
-                <div className="container">
-                    <form className="">
+                   <form className="">
 
                         <h1>Encontrá tu mascota aquí</h1>
                         <p class="parrafo-buscar">Adoptar no es comprar, no somos una tienda, adoptar es añadir un nuevo miembro a tu
@@ -18,7 +16,7 @@ class FormBuscar extends React.Component {
                             <div className="form-row">
                                 <div className="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                     <div className="form-check-inline">
-                                        <input className="form-check-input" type="radio" name="tipo-animal" id="tipo-animal" value="perro"
+                                        <input className="form-check-input" type="radio" name="tipo-animal" id="tipo-animal-perro" value="perro"
                                             checked></input>
                                         <label className="form-check-label" for="radio-btn-tipo">
                                             <img src="assets/icons/ico-dog.png" width="50" height="50" className="d-inline-block align-center"
@@ -26,13 +24,13 @@ class FormBuscar extends React.Component {
 
                                     </div>
                                     <div className="form-check-inline item-align-center">
-                                        <input className="form-check-input" type="radio" name="tipo-animal" id="tipo-animal" value="gato"></input>
+                                        <input className="form-check-input" type="radio" name="tipo-animal" id="tipo-animal-gato" value="gato"></input>
                                         <label className="form-check-label" for="radio-btn-tipo">
                                             <img src="assets/icons/ico-cat.png" width="50" height="50" className="d-inline-block align-center"
                                                 alt="Gato"></img> Gato</label>
                                     </div>
                                     <div className="form-check-inline">
-                                        <input className="form-check-input" type="radio" name="tipo-animal" id="tipo-animal" value="otro"></input>
+                                        <input className="form-check-input" type="radio" name="tipo-animal" id="tipo-animal-otro" value="otro"></input>
                                         <label className="form-check-label" for="radio-btn-tipo">
                                             <img src="assets/icons/ico-search.png" width="50" height="50" className="d-inline-block align-center"
                                                 alt="Otro"></img> Otro</label>
@@ -42,10 +40,10 @@ class FormBuscar extends React.Component {
 
                             <div className="form-row">
                                 <div className="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
-                                    <label className="" for="inlineFormInputGroup"></label>
+                                    <label for="inlineFormInputGroup"></label>
                                     <select name="Barrio" className="form-control mb-2" id="inlineFormInput">
                                         <option value="Raza">Raza</option>
-                                        <optgroup label="PERROS">
+                                        <optgroup id="raza-perro" label="PERROS">
                                             <option value="Beagle">Beagle</option>
                                             <option value="Border Collie ">Border Collie </option>
                                             <option value="Boxer">Boxer</option>
@@ -56,7 +54,7 @@ class FormBuscar extends React.Component {
                                             <option value="Pekines">Pekinés</option>
                                             <option value="Sabueso">Sabueso</option>
                                         </optgroup>
-                                        <optgroup label="GATOS">
+                                        <optgroup id="raza-gato" label="GATOS">
                                             <option value="Persa">Persa</option>
                                             <option value="AzulRuso">Bombay</option>
                                             <option value="MaineCoon">Azul Ruso</option>
@@ -67,13 +65,13 @@ class FormBuscar extends React.Component {
                                 <div className="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
                                     <label className="" for="inlineFormInputGroup"></label>
                                     <div className="form-check-inline">
-                                        <input className="form-check-input" type="radio" name="sexo-animal" id="sexo-animal" value="hembra"></input>
+                                        <input id="sexo-animal-hembra" className="form-check-input" type="radio" name="sexo-animal" value="hembra"></input>
                                         <label className="form-check-label" for="adio-btn-sexo">
                                             Hembra
                   </label>
                                     </div>
                                     <div className="form-check-inline">
-                                        <input className="form-check-input" type="radio" name="exampleRadios" id="sexo-animal" value="macho"></input>
+                                        <input id="sexo-animal-macho" className="form-check-input" type="radio" name="exampleRadios" value="macho"></input>
                                         <label className="form-check-label" for="radio-btn-sexo">
                                             Macho
                   </label>
@@ -122,9 +120,6 @@ class FormBuscar extends React.Component {
 
                         </fieldset>
                     </form>
-                </div>
-            </section>
-
         );
     }
 }

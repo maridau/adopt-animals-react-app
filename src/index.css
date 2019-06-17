@@ -62,7 +62,7 @@ footer h2 {
 @media (min-width: 992px) {
   main {
     background-origin: padding-box;
-    /*background-image: url('./assets/icons/background.png');*/
+    background-image: url('./images/background.png');
     background-repeat: repeat;
   }
 }

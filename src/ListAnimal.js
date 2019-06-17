@@ -1,5 +1,6 @@
 import React from 'react';
 import './listAnimal.css';
+import FormBuscar from './FormBuscar.js';
 import { baseAnimals } from './baseAnimals.json';
 
 class ListAnimal extends React.Component {
@@ -12,16 +13,16 @@ class ListAnimal extends React.Component {
 
   render() {
     const listadoAnimales = this.state.baseAnimals.map((baseAnimals, i) => {
-      
+
       return (
         <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
           <a className="card-link" href="#animal" onClick={this.goToAnimal}>
-                <div className="card card-container mb-4 shadow-sm">
+            <div className="card card-container mb-4 shadow-sm">
               <img className="card-foto" src={baseAnimals.picture} alt="Jacinta" title="Perro en adopcion"></img>
               <div className="card-body">
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="card-title">{baseAnimals.name}</div>
-                  <small className="text-muted"><img src="assets/icons/ico-dog.png" width="50" height="50"
+                  <small className="text-muted"><img src={baseAnimals.icon} width="50" height="50"
                     className="d-inline-block align-right" alt="Dog"></img></small>
                 </div>
                 <div className="container-card-list-group">
@@ -49,6 +50,7 @@ class ListAnimal extends React.Component {
     return (
       <section id="listado-animales">
         <div className="container">
+          <FormBuscar />
           <div className="row">
             {listadoAnimales}
           </div>
