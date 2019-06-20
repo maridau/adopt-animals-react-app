@@ -11,6 +11,8 @@ class Animal extends React.Component {
       }
       
     render() {
+        const animalItem = this.state.baseAnimals.map((animalItem, i) => {
+            
         return (
             <div className="container">
                 <div className="row">
@@ -72,6 +74,9 @@ class Animal extends React.Component {
                 </div>
             </div>
         );
+        
+    }
+    );
     }
 }
 

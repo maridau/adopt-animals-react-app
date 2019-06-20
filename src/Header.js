@@ -28,7 +28,7 @@ class Header extends React.Component {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#favorites" onClick={this.goToFavorites}><img src="assets/icons/ico-love.png" width="50" height="50"
+                <a className="nav-link" href="#favorites" onClick={this.goToFavorites}><img src="assets/icons/ico-loveit.png" width="50" height="50"
                     className="d-inline-block align-center" alt="Favoritos"></img>FAVORITOS</a>
               </li>
               <li className="nav-item">

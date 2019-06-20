@@ -4,7 +4,6 @@ import Footer from './Footer.js';
 import ListAnimal from './ListAnimal.js';
 import Register from './Register.js';
 import Favorites from './Favorites';
-import ToggleFavorite from './ToggleFavorite';
 import Blog from './Blog.js';
 import { baseAnimals } from './baseAnimals.json';
 
@@ -72,7 +71,7 @@ class App extends React.Component {
     return (
       <main>
         <Header />
-        <div id="root" class="btn"><ToggleFavorite/></div>
+        
         <Register onAddAnimal={this.handleAddAnimal}/>
         <ListAnimal/>
         <Footer />
