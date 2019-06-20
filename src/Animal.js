@@ -3,53 +3,74 @@ import './animal.css';
 
 
 class Animal extends React.Component {
-    constructor(props) {
-        super(props);
-        this.animals = [ 
-          {id: 1, type: 'Dog', picture: 'src="assets/p1.jpeg"', name: 'Jata', sex: 'Hembra', birthDate: '03/07/2015', zone: 'Reducto',  breed:'Sabueso', eyes: 'Marrón', pelt:'Beige', description:'Es muy bueno', favorite:'false'},
-          {id: 2, type: 'Cat', picture: 'src="assets/g1.jpg"', name: 'Felix', sex: 'Macho', birthDate: '11/01/2017', zone: 'Colon',  breed:'Bombay', eyes: 'Marrón', pelt:'Negro', description:'Es muy Lindo', favorite:'false'},
-          {id: 3, type: 'Dog', picture: 'src="assets/p2.jpg"', name: 'Chispas', sex: 'Macho', birthDate: '17/01/2019', zone: 'La Blanqueada',  breed:'Labrador', eyes: 'Marrón', pelt:'Beige', description:'Es muy tierno', favorite:'false'}
-        ]
-        this.state = { 
+    constructor() {
+        super();
+        this.state = {
+          baseAnimals
         };
-    }
+      }
+      
     render() {
         return (
-            <section id="listado-animales">
-                  <div class="container">
-                    <p>{this.animnals.map(animal=><Animal animal={animal} key={animal.id}/>)}</p>
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                            <a class="card-link" href="animal.html">
-                                <div class="card card-container mb-4 shadow-sm">
-                                    <img class="card-foto" src="assets/p1.jpeg" alt="Jacinta" title="Perro en adopcion"></img>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="card-title">Jacinta</div>
-                                            <small class="text-muted"><img src="assets/icons/ico-dog.png" width="50" height="50"
-                                                class="d-inline-block align-right" alt="Dog"></img></small>
-                                        </div>
-                                        <div class="container-card-list-group">
-                                            <ul class="card-list-group">
-                                                <li class="card-list-group-item"><strong>Sabueso</strong></li>
-                                                <li class="card-list-group-item">Hembra</li>
-                                                <li class="card-list-group-item">Reducto</li>
-                                            </ul>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <form>
-                                                <button type="submit" class="btn btn-primary mb-2">Lo quiero conocer</button>
-                                            </form>
-                                            <small class="text-muted"><img src="assets/icons/ico-love.png" width="30" height="30"
-                                                class="d-inline-block align-center" alt="Favoritos"></img></small>
-                                        </div>
-                                    </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img className="d-block w-100" src="assets/p1.jpeg" alt="First slide"></img>
                                 </div>
+                                <div className="carousel-item">
+                                    <img className="d-block w-100" src="assets/p2.jpg" alt="Second slide"></img>
+                                </div>
+                                <div className="carousel-item">
+                                    <img className="d-block w-100" src="assets/p3.jpg" alt="Third slide"></img>
+                                </div>
+                            </div>
+                            <a className="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                data-slide="prev">
+                                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span className="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                data-slide="next">
+                                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span className="sr-only">Siguiente</span>
                             </a>
                         </div>
                     </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div className="animal-perfil">
+                            <div className="animal-title"><img src="assets/icons/ico-dog.png" width="50" height="50"
+                                    className="d-inline-block align-center" alt="Perros"></img> Jacinta</div><br></br>
+
+                            <div className="animal-descripcion"><strong>Sexo:</strong> Hembra</div>
+                            <div className="animal-descripcion"><strong>Fecha de nacimiento:</strong> 13 de Marzo de 2019
+                            </div>
+                            <div className="animal-descripcion"><strong>Barrio:</strong> Atahualpa</div>
+                            <div className="animal-descripcion"><strong>Raza:</strong> Labrador</div>
+                            <div className="animal-descripcion"><strong>Color de ojos:</strong> Marrones</div>
+                            <div className="animal-descripcion"><strong>Pelo:</strong> Claro</div>
+                            <div className="animal-descripcion">
+                                <p>Jacinta pasa el día encerrada a la búsqueda de una familia que la quiera como ella
+                                    merece.
+                                    Actualmente la cuida una familia con escasos recursos económicos que a pesar de
+                                    quererla mucho, no se puede hacer cargo de él.</p>
+                            </div>
+                            <form>
+                                <fieldset className="fieldset-buttons">
+                                    <div className="form-group">
+                                        <button type="submit" className="btn btn-primary mb-2">Lo quiero
+                                            adoptar</button>
+                                        <button type="submit" className="btn btn-secondary mb-2">Seguir
+                                            buscando</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
         );
     }
 }

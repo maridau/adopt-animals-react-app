@@ -8,7 +8,7 @@ class Header extends React.Component {
       <header className="header">
         <nav className="navbar navbar-expand-lg navbar-light navbar-bg">
           <a className="navbar-brand" href="#home" onClick={this.goToListAnimals}>
-            <img src="assets/icons/ico-logo.png" width="80" height="80" class="d-inline-block align-items-center" alt=""></img>
+            <img src="assets/icons/ico-logo.png" width="80" height="80" className="d-inline-block align-items-center" alt=""></img>
             ADOPT ANIMALS
           </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

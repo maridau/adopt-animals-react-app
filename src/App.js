@@ -4,14 +4,25 @@ import Footer from './Footer.js';
 import ListAnimal from './ListAnimal.js';
 import Register from './Register.js';
 import Favorites from './Favorites';
+import ToggleFavorite from './ToggleFavorite';
 import Blog from './Blog.js';
+import { baseAnimals } from './baseAnimals.json';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      section: 1,
+      section: 2,
+      baseAnimals
     };
+    this.handleAddAnimal=this.handleAddAnimal.bind(this);
+  }
+
+  handleAddAnimal(animalitem){
+    this.setState({
+      baseAnimals:[...this.state.baseAnimals, animalitem]
+    });
+    console.log('listo, handleAddAnimal app.js');
   }
 
   goToListAnimals = () => {
@@ -55,13 +66,17 @@ class App extends React.Component {
     }
   }
 
+
   render() {
 
     return (
       <main>
         <Header />
-        {this.currentSection()}
+        <div id="root" class="btn"><ToggleFavorite/></div>
+        <Register onAddAnimal={this.handleAddAnimal}/>
+        <ListAnimal/>
         <Footer />
+        
       </main>
     );
   }

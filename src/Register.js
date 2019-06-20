@@ -2,75 +2,117 @@ import React from 'react';
 import './register.css';
 
 class Register extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            id: '', 
+            type: '',
+            icon: '',
+            picture:'',
+            name: '',
+            sex: '',
+            birthDate:'',
+            zone:'',
+            breed:'',
+            eyes:'',
+            pelt:'',
+            description:'',
+            favorite:'false',
+            personName:'',
+            personPhone:'',
+            personEmail:''
+        };
+        this.handleInput = this.handleInput.bind(this);
+        this.handleAddAnimal=this.handleAddAnimal.bind(this);
+    }
+    handleAddAnimal(animalitem){
+        this.setState({
+          baseAnimals:[...this.state.baseAnimals, animalitem]
+        });
+        console.log('listo, handleAddAnimal Register app.js');
+      }
+
+    handleInput(e){
+       /*console.log(e.target.name, e.target.value);*/
+       const {value, name} = e.target;
+       this.setState({
+           [name]:value
+       })
+      
+    }
+    handleSubmit(e){
+        e.preventDefalut();
+        this.props.onAddAnimal(this.state);
+    }
     render() {
         return (
 
             <section id="section-register">
                 <div className="container">
                     <div className="form-container">
-                        <form className="form-group">
+                        <form className="form-group" onSubmit={this.handleSubmit}>
                             <fieldset className="fieldset-animal">
 
                                 <h1>Registrar un animal para adopción</h1>
 
                                 <div className="form-row">
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                        <label className="" for="inlineFormInputGroup">Tipo de animal</label><br></br>
+                                        <label className="" htmlFor="inlineFormInputGroup">Tipo de animal</label><br></br>
                                         <div className="form-check-inline">
-                                            <input className="form-check-input" type="radio" name="tipo-animal" id="tipo-animal" value="perro" checked></input>
-                                            <label className="form-check-label" for="radio-btn-tipo">
+                                            <input onChange={this.handleInput} id="type-dog" name="type" value="Dog" className="form-check-input" type="radio"></input>
+                                            <label className="form-check-label" htmlFor="radio-btn-tipo">
                                                 <img src="assets/icons/ico-dog.png" width="50" height="50" className="d-inline-block align-center" alt="Perro"></img> Perro</label>
                                         </div>
 
                                         <div className="form-check-inline">
-                                            <input className="form-check-input" type="radio" name="tipo-animal" id="tipo-animal" value="gato"></input>
-                                            <label className="form-check-label" for="radio-btn-tipo">
+                                            <input onChange={this.handleInput} id="type-cat" name="type" className="form-check-input" type="radio" value="Cat"></input>
+                                            <label className="form-check-label" htmlFor="radio-btn-tipo">
                                                 <img src="assets/icons/ico-cat.png" width="50" height="50" className="d-inline-block align-center" alt="Gato"></img> Gato</label>
                                         </div>
 
                                         <div className="form-check-inline">
-                                            <input className="form-check-input" type="radio" name="tipo-animal" id="tipo-animal" value="otro"></input>
-                                            <label className="form-check-label" for="radio-btn-tipo">
+                                            <input onChange={this.handleInput} id="type-other" name="type" className="form-check-input" type="radio" value="Other"></input>
+                                            <label className="form-check-label" htmlFor="radio-btn-tipo">
                                                 <img src="assets/icons/ico-search.png" width="50" height="50" className="d-inline-block align-center" alt="Otro"></img> Otro</label>
                                         </div>
                                     </div>
 
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                        <label for="exampleFormControlFile1">Subí una foto</label>
-                                        <input type="file" className="form-control-file mb-2" id="exampleFormControlFile1"></input>
+                                        <label htmlFor="exampleFormControlFile1">Subí una foto</label>
+                                        <input onChange={this.handleInput} id="picture" name="picture" type="file" className="form-control-file mb-2"></input>
                                     </div>
 
                                 </div>
 
                                 <div className="form-row">
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                        <label className="" for="inlineFormInputGroup">Nombre</label>
-                                        <input className="form-control mb-2" type="text" placeholder="Si aún no tiene, no te preocupes!"></input>
+                                        <label className="" htmlFor="inlineFormInputGroup">Nombre</label>
+                                        <input onChange={this.handleInput} id="name" name="name" className="form-control mb-2" type="text" placeholder="Si aún no tiene, no te preocupes!"></input>
                                     </div>
 
                                     <div className="form-group col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                                        <label className="" for="inlineFormInputGroup">Sexo</label><br></br>
+                                        <label className="" htmlFor="inlineFormInputGroup">Sexo</label><br></br>
                                         <div className="form-check-inline">
-                                            <input className="form-check-input" type="radio" name="sexo-animal" id="sexo-animal" value="hembra"></input>
-                                            <label className="form-check-label" for="adio-btn-sexo"> Hembra</label>
+                                            <input onChange={this.handleInput} id="sex-female" name="sex" className="form-check-input" type="radio" value="hembra"></input>
+                                            <label className="form-check-label" htmlFor="adio-btn-sexo"> Hembra</label>
                                         </div>
 
                                         <div className="form-check-inline">
-                                            <input className="form-check-input" type="radio" name="exampleRadios" id="sexo-animal" value="macho"></input>
-                                            <label className="form-check-label" for="radio-btn-sexo"> Macho</label>
+                                            <input onChange={this.handleInput} id="sex-male" name="sex"  className="form-check-input" type="radio" value="macho"></input>
+                                            <label className="form-check-label" htmlFor="radio-btn-sexo"> Macho</label>
                                         </div>
                                     </div>
 
                                     <div className="form-group col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                                        <label className="" for="inlineFormInputGroup">Fecha de Nacimiento</label>
-                                        <input className="form-control mb-2" type="date" placeholder="Fecha de Nacimiento"></input>
+                                        <label className="" htmlFor="inlineFormInputGroup">Fecha de Nacimiento</label>
+                                        <input onChange={this.handleInput} id="birthdate" name="birthdate" className="form-control mb-2" type="date" placeholder="Fecha de Nacimiento"></input>
                                     </div>
                                 </div>
 
                                 <div className="form-row">
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
-                                        <label className="" for="inlineFormInputGroup">Barrio</label>
-                                        <select name="Barrio" className="form-control mb-2" id="inlineFormInput">
+                                        <label className="" htmlFor="inlineFormInputGroup">Barrio</label>
+                                        <select onChange={this.handleInput} id="zone" name="zone" className="form-control mb-2">
                                             <option value="Barrio">Barrio</option>
                                             <option value="Aguada">Aguada</option>
                                             <option value="Atahualpa">Atahualpa</option>
@@ -93,8 +135,8 @@ class Register extends React.Component {
                                     </div>
 
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
-                                        <label className="" for="inlineFormInputGroup">Raza</label>
-                                        <select name="Barrio" className="form-control mb-2" id="inlineFormInput">
+                                        <label className="" htmlFor="inlineFormInputGroup">Raza</label>
+                                        <select onChange={this.handleInput} id="breed" name="breed" className="form-control mb-2">
                                             <option value="Raza">Raza</option>
                                             <optgroup label="PERROS">
                                                 <option value="Beagle">Beagle</option>
@@ -116,21 +158,21 @@ class Register extends React.Component {
                                     </div>
 
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
-                                        <label className="" for="inlineFormInputGroup">Color de ojos</label>
-                                        <input className="form-control mb-2" type="text" placeholder="Color de ojos"></input>
+                                        <label className="" htmlFor="inlineFormInputGroup">Color de ojos</label>
+                                        <input onChange={this.handleInput} id="eyes" name="eyes" className="form-control mb-2" type="text" placeholder="Color de ojos"></input>
                                     </div>
 
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
-                                        <label className="" for="inlineFormInputGroup">Color de piel</label>
-                                        <input className="form-control mb-2" type="text" placeholder="Color de piel"></input>
+                                        <label className="" htmlFor="inlineFormInputGroup">Color de piel</label>
+                                        <input onChange={this.handleInput} id="pelt" name="pelt" className="form-control mb-2" type="text" placeholder="Color de piel"></input>
                                     </div>
 
                                 </div>
 
                                 <div className="form-row">
                                     <div className="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <label className="" for="inlineFormInputGroup">Descripción</label>
-                                        <textarea className="form-control mb-2" name="descripcion"
+                                        <label className="" htmlFor="inlineFormInputGroup">Descripción</label>
+                                        <textarea onChange={this.handleInput} id="description" name="description" className="form-control mb-2"
                                             placeholder="Contanos lo que quieras sobre el animal que querés dar en adopción. Cualquier info nos sirve!"></textarea>
                                     </div>
                                 </div>
@@ -143,22 +185,22 @@ class Register extends React.Component {
                                 <div className="form-row">
 
                                     <div className="form-group col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                                        <label className="" for="inlineFormInputGroup">Nombre</label>
-                                        <input className="form-control mb-2" type="text" placeholder="Nombre"></input>
+                                        <label className="" htmlFor="inlineFormInputGroup">Nombre</label>
+                                        <input onChange={this.handleInput} id="personName" name="personName" className="form-control mb-2" type="text" placeholder="Nombre" required></input>
                                     </div>
 
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                                        <label className="" for="inlineFormInputGroup">Teléfono</label>
-                                        <input className="form-control mb-2" type="tel" placeholder="Teléfono"></input>
+                                        <label className="" htmlFor="inlineFormInputGroup">Teléfono</label>
+                                        <input onChange={this.handleInput} id="personPhone" name="personPhone" className="form-control mb-2" type="tel" placeholder="Teléfono" required></input>
                                     </div>
 
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                                        <label className="" for="inlineFormInputGroup">Email</label>
+                                        <label className="" htmlFor="inlineFormInputGroup">Email</label>
                                         <div className="input-group mb-2">
                                             <div className="input-group-prepend">
                                                 <div className="input-group-text">@</div>
                                             </div>
-                                            <input type="text" className="form-control" id="inlineFormInputGroup" placeholder="Email"></input>
+                                            <input onChange={this.handleInput} id="personEmail" name="personEmail" type="text" className="form-control" placeholder="Email"></input>
                                         </div>
                                     </div>
                                 </div>
