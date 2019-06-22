@@ -23,7 +23,6 @@ class App extends React.Component {
     this.setState({
       baseAnimals: [...this.state.baseAnimals, animalitem]
     });
-    console.log('listo, handleAddAnimal app.js');
   }
 
   goToListAnimals = () => {
@@ -45,7 +44,7 @@ class App extends React.Component {
   }
   goToAnimal = (animalId) => {
     this.setState({
-      currentAnimal:animalId,
+      currentAnimal:2,
       section: 5
     });
   }
@@ -73,7 +72,8 @@ class App extends React.Component {
     }
 
     if (this.state.section === 5) {
-      return <Animal />;
+      this.goToAnimal=(this.goToAnimal)
+      return <Animal animal ={this.state.baseAnimals.find(item =>item.id===this.state.currentAnimal)}/>;
     }
   }
 
