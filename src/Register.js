@@ -2,47 +2,50 @@ import React from 'react';
 import './register.css';
 
 class Register extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            id: '', 
+            section:2,
+            id: '',
             type: '',
             icon: '',
-            picture:'',
+            picture: '',
             name: '',
             sex: '',
-            birthDate:'',
-            zone:'',
-            breed:'',
-            eyes:'',
-            pelt:'',
-            description:'',
-            favorite:'false',
-            personName:'',
-            personPhone:'',
-            personEmail:''
+            birthDate: '',
+            zone: '',
+            breed: '',
+            eyes: '',
+            pelt: '',
+            description: '',
+            favorite: 'false',
+            personName: '',
+            personPhone: '',
+            personEmail: ''
         };
         this.handleInput = this.handleInput.bind(this);
-        this.handleAddAnimal=this.handleAddAnimal.bind(this);
+        this.handleAddAnimal = this.handleAddAnimal.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
     }
-    handleAddAnimal(animalitem){
+    handleAddAnimal(animalitem) {
         this.setState({
-          baseAnimals:[...this.state.baseAnimals, animalitem]
+            baseAnimals: [...this.state.baseAnimals, animalitem]
         });
         console.log('listo, handleAddAnimal Register app.js');
-      }
-
-    handleInput(e){
-       /*console.log(e.target.name, e.target.value);*/
-       const {value, name} = e.target;
-       this.setState({
-           [name]:value
-       })
-      
     }
-    handleSubmit(e){
+
+    handleInput(e) {
+        console.log(e.target.name, e.target.value);
+        const { value, name } = e.target;
+        this.setState({
+            [name]: value
+    })
+    }
+
+    handleSubmit(e) {
         e.preventDefalut();
-        this.props.onAddAnimal(this.state);
+    alert('hola');
+        this.props.onAddAnimal(this.state);  
     }
     render() {
         return (
@@ -98,7 +101,7 @@ class Register extends React.Component {
                                         </div>
 
                                         <div className="form-check-inline">
-                                            <input onChange={this.handleInput} id="sex-male" name="sex"  className="form-check-input" type="radio" value="macho"></input>
+                                            <input onChange={this.handleInput} id="sex-male" name="sex" className="form-check-input" type="radio" value="macho"></input>
                                             <label className="form-check-label" htmlFor="radio-btn-sexo"> Macho</label>
                                         </div>
                                     </div>
@@ -205,16 +208,16 @@ class Register extends React.Component {
                                     </div>
                                 </div>
 
-                            </fieldset>  
-                       
-                            <fieldset className="fieldset-buttons">
-                            <div className="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                <button type="submit" className="btn btn-primary mb-2">Guardar datos</button>
-                                <button type="submit" className="btn btn-secondary mb-2">Vuelvo más tarde</button>
-                            </div>
                             </fieldset>
-                           </form>
-                      </div>
+
+                            <fieldset className="fieldset-buttons">
+                                <div className="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <button type="submit" className="btn btn-primary mb-2">Guardar datos</button>
+                                    <button type="submit" className="btn btn-secondary mb-2">Vuelvo más tarde</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
             </section>
         );

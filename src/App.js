@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header.js';
 import Footer from './Footer.js';
+import Animal from './Animal.js';
 import ListAnimal from './ListAnimal.js';
 import Register from './Register.js';
 import Favorites from './Favorites';
@@ -11,15 +12,16 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      section: 2,
+      section: 1,
+      currentAnimal:0,
       baseAnimals
     };
-    this.handleAddAnimal=this.handleAddAnimal.bind(this);
+    this.handleAddAnimal = this.handleAddAnimal.bind(this);
   }
 
-  handleAddAnimal(animalitem){
+  handleAddAnimal(animalitem) {
     this.setState({
-      baseAnimals:[...this.state.baseAnimals, animalitem]
+      baseAnimals: [...this.state.baseAnimals, animalitem]
     });
     console.log('listo, handleAddAnimal app.js');
   }
@@ -41,6 +43,12 @@ class App extends React.Component {
       section: 3
     });
   }
+  goToAnimal = (animalId) => {
+    this.setState({
+      currentAnimal:animalId,
+      section: 5
+    });
+  }
   goToBlog = () => {
     this.setState({
       section: 4
@@ -53,7 +61,7 @@ class App extends React.Component {
     }
 
     if (this.state.section === 2) {
-      return <Register />;
+      return <Register onAddAnimal={this.handleAddAnimal} />;
     }
 
     if (this.state.section === 3) {
@@ -63,6 +71,10 @@ class App extends React.Component {
     if (this.state.section === 4) {
       return <Blog />;
     }
+
+    if (this.state.section === 5) {
+      return <Animal />;
+    }
   }
 
 
@@ -70,12 +82,16 @@ class App extends React.Component {
 
     return (
       <main>
-        <Header />
-        
-        <Register onAddAnimal={this.handleAddAnimal}/>
-        <ListAnimal/>
+        <Header 
+        goToListAnimals={this.goToListAnimals}
+        goToRegister={this.goToRegister}
+        goToFavorites={this.goToFavorites}
+        goToBlog= {this.goToBlog}
+        />
+
+        {this.currentSection()}
         <Footer />
-        
+
       </main>
     );
   }

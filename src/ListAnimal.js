@@ -1,13 +1,17 @@
 import React from 'react';
 import './listAnimal.css';
 import FormBuscar from './FormBuscar.js';
+import ToggleFavorite from './ToggleFavorite.js';
 import { baseAnimals } from './baseAnimals.json';
-import ToggleFavorite from './ToggleFavorite';
+
+
 console.log(baseAnimals);
+
 class ListAnimal extends React.Component {
   constructor() {
     super();
     this.state = {
+      section:1,
       baseAnimals
     };
   }
