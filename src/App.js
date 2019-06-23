@@ -44,8 +44,8 @@ class App extends React.Component {
   }
   goToAnimal = (animalId) => {
     this.setState({
-      currentAnimal:2,
-      section: 5
+      section: 5,
+      currentAnimal: animalId
     });
   }
   goToBlog = () => {
@@ -72,8 +72,7 @@ class App extends React.Component {
     }
 
     if (this.state.section === 5) {
-      this.goToAnimal=(this.goToAnimal)
-      return <Animal animal ={this.state.baseAnimals.find(item =>item.id===this.state.currentAnimal)}/>;
+      return <Animal animalItem ={this.state.baseAnimals.find(item =>item.id===this.state.currentAnimal)}/>;
     }
   }
 

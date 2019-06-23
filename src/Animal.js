@@ -1,7 +1,6 @@
-
-
 import React from 'react';
 import './listAnimal.css';
+
 import { baseAnimals } from './baseAnimals.json';
 
 
@@ -9,14 +8,12 @@ class Animal extends React.Component {
     constructor() {
         super();
         this.state = {
-            section: 1,
+            section: 5,
             baseAnimals
         };
     }
 
     render() {
-        const animalItem = this.state.baseAnimals.map((animalItem, i) => {
-
             return (
                 <div className="row">
                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -70,20 +67,17 @@ class Animal extends React.Component {
                     </div>
                 </div>
                 </div>
-                 )
-        })
-
+            )
+         
+        };
+    }
 
         return (
             <section id="animal">
                 <div className="container">
-
                         {animalItem}
                 </div>
             </section>
         );
-    }
-}
-
-
+        
 export default Animal;
