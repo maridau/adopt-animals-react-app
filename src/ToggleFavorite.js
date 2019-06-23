@@ -16,7 +16,10 @@ class ToggleFavorite extends React.Component {
   
       handleClick() {
           this.setState(function(prevState) {
-              return {isToggleOn: !prevState.isToggleOn};
+              return {
+                isToggleOn: !prevState.isToggleOn
+                        /* ME FALTA CAMBIAR EL ESTADO DEL ANIMAL */          
+              };
           });
       }
       
