@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      section: 1,
+      section: 2,
       currentAnimal:0,
       baseAnimals
     };
@@ -58,7 +58,9 @@ class App extends React.Component {
 
   currentSection() {
     if (this.state.section === 1) {
-      return <ListAnimal goToAnimal={this.goToAnimal} />;
+      return <ListAnimal 
+      goToAnimal={this.goToAnimal}
+      animals={this.state.baseAnimals} />;
     }
 
     if (this.state.section === 2) {
@@ -66,7 +68,7 @@ class App extends React.Component {
     }
 
     if (this.state.section === 3) {
-      return <Favorites />;
+      return <Favorites animals={this.state.baseAnimals} />;
     }
 
     if (this.state.section === 4) {

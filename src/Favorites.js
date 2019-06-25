@@ -1,17 +1,10 @@
 import React from 'react';
 import './listAnimal.css';
-import { baseAnimals } from './baseAnimals.json';
 
 class Favorites extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            baseAnimals
-        };
-    }
 
     render() {
-        const fav = this.state.baseAnimals.filter(baseAnimals => baseAnimals.favorite === "true");
+        const fav = this.props.animals.filter(animals => animals.favorite === "true");
         const listFavorites = fav.map((fav, i) => {
 
             return (

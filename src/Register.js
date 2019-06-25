@@ -5,37 +5,13 @@ class Register extends React.Component {
     constructor() {
         super();
         this.state = {
-            section:2,
-            id: '',
-            type: '',
-            icon: '',
-            picture: '',
-            name: '',
-            sex: '',
-            birthDate: '',
-            zone: '',
-            breed: '',
-            eyes: '',
-            pelt: '',
-            description: '',
-            favorite: 'false',
-            personName: '',
-            personPhone: '',
-            personEmail: ''
+            section:3
         };
         this.handleInput = this.handleInput.bind(this);
-        //this.handleAddAnimal = this.handleAddAnimal.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
     }
-    /*handleAddAnimal(animalitem) {
-        this.setState({
-            baseAnimals: [...this.state.baseAnimals, animalitem]
-        });
-        console.log('listo, handleAddAnimal Register app.js');
-    }*/
 
-    handleInput(e) {
-        console.log(e.target.name, e.target.value);
+      handleInput(e) {
         const { value, name } = e.target;
         this.setState({
             [name]: value
@@ -45,7 +21,9 @@ class Register extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.onAddAnimal(this.state);  
+        e.reset();
     }
+
     render() {
         return (
 

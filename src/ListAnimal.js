@@ -2,26 +2,12 @@ import React from 'react';
 import './listAnimal.css';
 import FormBuscar from './FormBuscar.js';
 import ToggleFavorite from './ToggleFavorite.js';
-import { baseAnimals } from './baseAnimals.json';
-
 
 class ListAnimal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      section:1,
-      baseAnimals,
-            type: '',
-            breed: '',
-            sex: '',
-            zone: ''
-    };
-    }
 
-  render() {
-    //const filtro = this.state.baseAnimals.find(baseAnimals.breed===this.state.breed);
-    //console.log(filtro);
-    const animalCards= this.state.baseAnimals.map((animalItem, i) => {
+ render() {
+
+    const animalCards= this.props.animals.map((animalItem, i) => {
 
       return (
         <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
