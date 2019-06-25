@@ -44,8 +44,9 @@ class App extends React.Component {
   }
   goToAnimal = (e) => {
     this.setState({
-      currentAnimal: e,
-      section: 5
+      section: 5,
+      currentAnimal: e
+      
     });
   }
 

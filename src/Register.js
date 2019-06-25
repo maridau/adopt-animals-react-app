@@ -24,15 +24,15 @@ class Register extends React.Component {
             personEmail: ''
         };
         this.handleInput = this.handleInput.bind(this);
-        this.handleAddAnimal = this.handleAddAnimal.bind(this);
+        //this.handleAddAnimal = this.handleAddAnimal.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
     }
-    handleAddAnimal(animalitem) {
+    /*handleAddAnimal(animalitem) {
         this.setState({
             baseAnimals: [...this.state.baseAnimals, animalitem]
         });
         console.log('listo, handleAddAnimal Register app.js');
-    }
+    }*/
 
     handleInput(e) {
         console.log(e.target.name, e.target.value);
@@ -43,7 +43,7 @@ class Register extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefalut();
+        e.preventDefault();
         this.props.onAddAnimal(this.state);  
     }
     render() {
