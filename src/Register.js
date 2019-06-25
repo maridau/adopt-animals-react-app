@@ -44,7 +44,6 @@ class Register extends React.Component {
 
     handleSubmit(e) {
         e.preventDefalut();
-    alert('hola');
         this.props.onAddAnimal(this.state);  
     }
     render() {

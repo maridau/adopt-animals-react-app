@@ -42,12 +42,13 @@ class App extends React.Component {
       section: 3
     });
   }
-  goToAnimal = (animalId) => {
+  goToAnimal = (e) => {
     this.setState({
-      currentAnimal: animalId,
+      currentAnimal: e,
       section: 5
     });
   }
+
   goToBlog = () => {
     this.setState({
       section: 4
@@ -72,6 +73,7 @@ class App extends React.Component {
     }
 
     if (this.state.section === 5) {
+      console.log('detectó seccion ===5');
       return <Animal animalItem ={this.state.baseAnimals.find(item =>item.id===this.state.currentAnimal)}/>;
     }
   }

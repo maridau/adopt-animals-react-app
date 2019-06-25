@@ -43,7 +43,7 @@ class ListAnimal extends React.Component {
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <form>
-                    <button type="submit" className="btn btn-primary mb-2" onClick={(e)=>this.props.goToAnimal(animalItem.id)}>Lo quiero conocer</button>
+                    <button type="submit" className="btn btn-primary mb-2" onClick={(e)=>this.props.goToAnimal(animalItem.id, e)}>Lo quiero conocer</button>
                   </form>
                   <small className="text-muted"><ToggleFavorite idAnimal={animalItem.id}/></small>
                 </div>
