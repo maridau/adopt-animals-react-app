@@ -31,7 +31,7 @@ class ListAnimal extends React.Component {
                   <form>
                     <button type="submit" className="btn btn-primary mb-2" onClick={(e)=>this.props.goToAnimal(animalItem.id,e)}>Lo quiero conocer</button>
                   </form>
-                  <small className="text-muted"><ToggleFavorite idAnimal={animalItem.id}/></small>
+                  <small className="text-muted"><ToggleFavorite favAnimal={animalItem[i]}/></small>
                 </div>
               </div>
             </div>

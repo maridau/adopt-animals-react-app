@@ -11,10 +11,10 @@ class ToggleFavorite extends React.Component {
     }
   
       handleClick() {
-          this.setState(function(prevState) {
+          this.setState(function(favAnimal) {
               return {
-                isFav: !prevState.isFav
-                        /* ME FALTA CAMBIAR EL ESTADO DEL ANIMAL */          
+                isFav: !favAnimal.isFav
+                /* ME FALTA CAMBIAR EL ESTADO DEL ANIMAL */          
               };
           });
       }
