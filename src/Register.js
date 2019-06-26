@@ -20,8 +20,9 @@ class Register extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.onAddAnimal(this.state);  
-        e.reset();
+        this.props.onAddAnimal(this.state);
+        //me falta limpiar el formulario
+        this.setState.handleInput=''
     }
 
     render() {

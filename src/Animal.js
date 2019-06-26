@@ -1,5 +1,5 @@
 import React from 'react';
-import './listAnimal.css';
+import './animal.css';
 
 
 class Animal extends React.Component {

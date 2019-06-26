@@ -23,7 +23,13 @@ class App extends React.Component {
     this.setState({
       baseAnimals: [...this.state.baseAnimals, animalitem]
     });
+    console.log(animalitem);
   }
+
+   /*handleFavorite(animalitem) {
+    this.setState({
+    });
+  }*/
 
   goToListAnimals = () => {
     this.setState({
@@ -64,11 +70,13 @@ class App extends React.Component {
     }
 
     if (this.state.section === 2) {
-      return <Register onAddAnimal={this.handleAddAnimal} />;
+      return <Register 
+      onAddAnimal={this.handleAddAnimal}/>;
     }
 
     if (this.state.section === 3) {
-      return <Favorites animals={this.state.baseAnimals} />;
+      return <Favorites 
+      animals={this.state.baseAnimals} />;
     }
 
     if (this.state.section === 4) {
@@ -76,7 +84,6 @@ class App extends React.Component {
     }
 
     if (this.state.section === 5) {
-      console.log('detectó seccion ===5');
       return <Animal animalItem ={this.state.baseAnimals.find(item =>item.id===this.state.currentAnimal)}/>;
     }
   }
