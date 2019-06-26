@@ -40,7 +40,7 @@ class Register extends React.Component {
                                     <div className="form-group col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                         <label className="" htmlFor="inlineFormInputGroup">Tipo de animal</label><br></br>
                                         <div className="form-check-inline">
-                                            <input onChange={this.handleInput} id="type-dog" name="type" value="Dog" className="form-check-input" type="radio"></input>
+                                            <input onChange={this.handleInput} id="type-dog" name="type" value="" className="form-check-input" type="radio"></input>
                                             <label className="form-check-label" htmlFor="radio-btn-tipo">
                                                 <img src="assets/icons/ico-dog.png" width="50" height="50" className="d-inline-block align-center" alt="Perro"></img> Perro</label>
                                         </div>
