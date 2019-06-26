@@ -6,7 +6,7 @@ class Animal extends React.Component {
 
     render() {
         return (
-            <section id="animal">
+            <section id="animalDescription">
                 <div className="container">
                     <div className="row">
 

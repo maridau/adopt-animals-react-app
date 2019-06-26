@@ -1,4 +1,8 @@
 /* animal en animal.html */
+#animalDescription{
+    margin-top: 2rem;
+}
+
 .animal-perfil{
     font-size: 1rem
 }

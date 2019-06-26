@@ -13,7 +13,7 @@ class ListAnimal extends React.Component {
         <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
           <a className="card-link" href="#animal">
             <div className="card card-container mb-4 shadow-sm">
-              <img className="card-foto" src={animalItem.picture} alt="Jacinta" title="Perro en adopcion"></img>
+              <img className="card-foto" src={animalItem.picture} alt="Animal en adopcion" title="Animal en adopcion"></img>
               <div className="card-body">
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="card-title">{animalItem.name}</div>
