@@ -29,8 +29,6 @@ class Favorites extends React.Component {
                                     <form>
                                         <button type="submit" className="btn btn-primary mb-2">Adoptar</button>
                                     </form>
-                                    <small className="text-muted"><img src="assets/icons/ico-love.png" width="30" height="30"
-                                        className="d-inline-block align-center" alt="Favoritos"></img></small>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +44,7 @@ class Favorites extends React.Component {
                     <form>
                         <h1>Favoritos</h1>
                         <p className="parrafo-buscar">Estos son los animales que te interesaron! <br></br>
-                        Los guardamos para ayudarte a elegir :)</p>
+                            Los guardamos para ayudarte a elegir :)</p>
                         <fieldset>
                             <div className="row">
                                 {listFavorites}

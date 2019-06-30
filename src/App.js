@@ -12,11 +12,12 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      section: 2,
-      currentAnimal:0,
+      section: 1,
+      currentAnimal: 0,
       baseAnimals
     };
     this.handleAddAnimal = this.handleAddAnimal.bind(this);
+
   }
 
   handleAddAnimal(animalitem) {
@@ -25,11 +26,6 @@ class App extends React.Component {
     });
     console.log(animalitem);
   }
-
-   /*handleFavorite(animalitem) {
-    this.setState({
-    });
-  }*/
 
   goToListAnimals = () => {
     this.setState({
@@ -52,7 +48,7 @@ class App extends React.Component {
     this.setState({
       section: 5,
       currentAnimal: e
-      
+
     });
   }
 
@@ -64,19 +60,20 @@ class App extends React.Component {
 
   currentSection() {
     if (this.state.section === 1) {
-      return <ListAnimal 
-      goToAnimal={this.goToAnimal}
-      animals={this.state.baseAnimals} />;
+      return <ListAnimal
+        goToAnimal={this.goToAnimal}
+        animals={this.state.baseAnimals}
+        onSetFilters={this.handleFilter} />;
     }
 
     if (this.state.section === 2) {
-      return <Register 
-      onAddAnimal={this.handleAddAnimal}/>;
+      return <Register
+        onAddAnimal={this.handleAddAnimal} />;
     }
 
     if (this.state.section === 3) {
-      return <Favorites 
-      animals={this.state.baseAnimals} />;
+      return <Favorites
+        animals={this.state.baseAnimals} />;
     }
 
     if (this.state.section === 4) {
@@ -84,7 +81,7 @@ class App extends React.Component {
     }
 
     if (this.state.section === 5) {
-      return <Animal animalItem ={this.state.baseAnimals.find(item =>item.id===this.state.currentAnimal)}/>;
+      return <Animal animalItem={this.state.baseAnimals.find(item => item.id === this.state.currentAnimal)} />;
     }
   }
 
@@ -93,11 +90,11 @@ class App extends React.Component {
 
     return (
       <main>
-        <Header 
-        goToListAnimals={this.goToListAnimals}
-        goToRegister={this.goToRegister}
-        goToFavorites={this.goToFavorites}
-        goToBlog= {this.goToBlog}
+        <Header
+          goToListAnimals={this.goToListAnimals}
+          goToRegister={this.goToRegister}
+          goToFavorites={this.goToFavorites}
+          goToBlog={this.goToBlog}
         />
         {this.currentSection()}
         <Footer />

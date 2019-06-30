@@ -5,9 +5,9 @@ import ToggleFavorite from './ToggleFavorite.js';
 
 class ListAnimal extends React.Component {
 
- render() {
-
-    const animalCards= this.props.animals.map((animalItem, i) => {
+render() {
+  //const animalCards= this.props.animals.filter(item => this.props.typeFilter === null || item.type === this.props.typeFilter).map((animalItem, i) => {  
+  const animalCards= this.props.animals.map((animalItem, i) => {  
 
       return (
         <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
