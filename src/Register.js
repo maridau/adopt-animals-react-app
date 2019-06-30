@@ -5,24 +5,24 @@ class Register extends React.Component {
     constructor() {
         super();
         this.state = {
-            section:3
+            section: 3
         };
         this.handleInput = this.handleInput.bind(this);
-        this.handleSubmit=this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-      handleInput(e) {
+    handleInput(e) {
         const { value, name } = e.target;
         this.setState({
             [name]: value
-    })
+        })
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.onAddAnimal(this.state);
         //me falta limpiar el formulario
-        this.setState.handleInput=''
+        this.setState.handleInput = ''
     }
 
     render() {

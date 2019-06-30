@@ -5,11 +5,10 @@ class Blog extends React.Component {
     render() {
         return (
 
-            <div>
-
-                <h1>Hello Blog</h1>
-
-            </div>
+            <form className="" onSubmit={this.handleFilter}>
+                <h1>Blog</h1>
+                <p className="parrafo-buscar">Historias que te van a encantar :)</p>
+            </form>
         );
     }
 }
